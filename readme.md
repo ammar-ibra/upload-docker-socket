@@ -15,7 +15,7 @@
 ## رفع صورة محليًا
 
 ```
-POST /api/v1/upload/local
+POST /api/v1/uploads/local
 ```
 
 يقوم بحفظ الصورة داخل مجلد **uploads** ثم يعيد اسم الملف ومساره.
@@ -25,7 +25,7 @@ POST /api/v1/upload/local
 ## رفع صورة إلى Cloudinary
 
 ```
-POST /api/v1/upload/cloud
+POST /api/v1/uploads/external
 ```
 
 يقوم برفع الصورة إلى Cloudinary ثم يعيد رابط الصورة.

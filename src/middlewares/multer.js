@@ -38,11 +38,11 @@ const storage = multer.diskStorage({
 const uploadLocal = multer({
     storage,
     fileFilter: (req, file, cb) => {
-        const allowed = ["image/jpeg", "image/png", "image/webp"];
+        const allowed = ["image/jpg ,image/jpeg", "image/png", "image/webp"];
         if (allowed.includes(file.mimetype)) {
             cb(null, true);
         } else {
-            cb(new Error("Only JPEG, PNG, and WEBP images are allowed"), false);
+            cb(new Error("Only JPEG, PNG , jpg, and WEBP images are allowed"), false);
         }
     },
     limits: {
