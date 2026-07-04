@@ -20,14 +20,14 @@ app.use(express.urlencoded({ extended: true }));
 app.use(morgan("dev"));
 app.use(express.static("public"));
 
-// Serve uploaded files
+// Server uploaded files
 app.use("/uploads", express.static(path.join(__dirname, "../uploads")));
 
 // Routes
 app.get("/api/health", (req, res) => res.status(200).json({ status: "API is Healthy" }));
 app.use("/api/v1/uploads", require("./routes/uploads.routes"));
 
-// ========== Socket.IO Chat ==========
+//  Socket.IO Chat 
 const server = http.createServer(app);
 const io = new Server(server, {
     cors: {
@@ -78,7 +78,7 @@ io.on("connection", (socket) => {
     });
 });
 
-// ========== Server ==========
+// Server
 const PORT = process.env.PORT || 3000;
 
 server.listen(PORT, () => {
